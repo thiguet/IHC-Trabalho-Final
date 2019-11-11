@@ -1,0 +1,17 @@
+{
+  "name": "trabalho_final",
+  "version": "0.0.0",
+  "description": "Projeto criado para a realização do Trabalhho Final de IHC\u001b[1;5D\u001b[D\u001b[D\u001b[D\u001b[\u001b[C\u001b[da\u001b[D\u001b[\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D materia de IHC da PUC Minas do curso Engenhharia de Software\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "IHC",
+    "Usabilidade",
+    "UX",
+    "\u001b[D\u001b[D\u001b[;\u001b[D\u001b[D\u001b[D\u001b[;\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[;"
+  ],
+  "author": "Thiago Costa e João Américo Caiafa",
+  "license": "ISC"
+}

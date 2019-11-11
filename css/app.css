@@ -1,0 +1,97 @@
+/*
+https://www.webfx.com/blog/web-design/google-fonts-examples/
+O porquê dessa fonte.
+
+*/
+body {
+    margin: 0;
+    font-family: 'Muli', 'Helvetica' !important;
+    background-color: #089644;
+    color: white;
+}
+
+input, label {
+    font-family: 'Muli' !important;
+}
+
+.container {
+    position: relative;
+    margin-left: 5%;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.menu {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+    padding-left: 0px;
+    margin: 0;
+    background-color: #19E36D;
+}
+
+.menu > li {
+    padding: 15px;
+}
+
+.menu > li > a  {
+    text-decoration: none;
+    color: white;
+} 
+
+.form-control {
+    width: 100%;
+    padding: 20px;
+}
+
+input[type="text"] {
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 2px;
+    margin: 10px;
+    font-size: 16px;
+    width: 100%;
+    outline: none;
+    background: none;
+    color: inherit;
+}
+
+
+input[type="button"], button {
+    background: none;
+    -webkit-appearance: none;
+    background: none;
+    box-shadow: none;
+    border: 1px solid black;
+    border-radius: 100px;
+}
+
+input[type="button"]:hover, 
+input[type="button"]:focus, 
+button:hover,
+button:focus {
+    outline: none;
+    cursor: pointer;
+/*    transform: translateY(4px); */
+}
+
+.image {
+    width: 40px;
+    fill: #02B0AD;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 436px) 
+{
+    .menu {
+        flex-direction: column;
+        text-align: center;
+    }
+}
