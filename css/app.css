@@ -48,7 +48,8 @@ input, label {
     padding: 20px;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="number"] {
     border: none;
     border-bottom: 1px solid white;
     padding: 2px;
@@ -61,12 +62,20 @@ input[type="text"] {
 }
 
 
+input[type="number"] {
+    text-align: center;
+    width: 100px;
+    text-indent: 20px;
+}
+
 input[type="button"], button {
     background: none;
     -webkit-appearance: none;
     background: none;
+    box-shadow: 0.5px 0.5px 10px white;
     box-shadow: none;
-    border: 1px solid black;
+    color: inherit;
+    border: none;
     border-radius: 100px;
 }
 
@@ -101,9 +110,20 @@ section,
 
 @media (max-width: 436px) 
 {
+    .images-container,
     .menu {
         flex-direction: column;
         text-align: center;
+        justify-content: center;
+    }
+
+    span.image {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    input[type="number"] {
+        text-indent: 0px;
     }
 }
 
@@ -112,4 +132,37 @@ section,
     -moz-animation: fa-spin 2s infinite linear;
     -o-animation: fa-spin 2s infinite linear;
     animation: fa-spin 2s infinite linear;
+}
+
+.centralize,
+.question {
+    text-align: center;
+    justify-content: center;
+}
+
+#question-text {
+    font-size: 18px;
+}
+
+.answer {
+    justify-content: space-around;
+}
+
+input[type="button"]:hover, 
+input[type="button"]:focus, 
+button:hover,
+button:focus {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.active {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.margin-top-50 {
+    margin-top: 50px;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
 }

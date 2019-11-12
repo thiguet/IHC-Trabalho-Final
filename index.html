@@ -23,21 +23,53 @@
         <div class="container">
             <h1>EcoMoney</h1>                 
         </div>
-        
         <div class="container">
            <section id="calc-agua">
                 <section>
-                    <div class="container">
+                    <div class="container margin-top-20">
                         <div class="images-container">
-                            <span class="image">
-                                <i class="fas fa-toilet fa-5x fa-spin-hover"></i>
-                            </span>
-                            <span class="image">
-                                <i class="fas fa-shower fa-5x fa-spin-hover"></i>
-                            </span>
-                            <span class="image">
-                                <i class="fas fa-tshirt fa-5x fa-spin-hover"></i>
-                            </span>
+                            <button id="fa-user-plus" class="water-spent-icons">
+                                <span class="image">
+                                    <i class="fas fa-user-plus fa-5x"></i>
+                                </span>
+                            </button>
+                            <button id="fa-toilet" class="water-spent-icons">
+                                <span class="image">
+                                    <i class="fas fa-toilet fa-5x"></i>
+                                </span>
+                            </button>
+                            <button id="fa-shower" class="water-spent-icons">
+                                <span class="image">
+                                    <i class="fas fa-shower fa-5x"></i>
+                                </span>
+                            </button>
+                            <button id="fa-tshirt" class="water-spent-icons">
+                               <span class="image">
+                                    <i class="fas fa-tshirt fa-5x"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="question-container" class="container question margin-top-20">
+                        <div class="question">
+                            <span id="question-text">Quantas descargas você realiza ao dia ?</span>
+                        </div>                        
+                        <div class="container margin-top-50">
+                            <div class="container centralize">
+                                <input type="number" id="counter" value="0"/>
+                            </div>
+                            <div class="container answer">
+                                <button id="fa-plus">
+                                    <span class="image">
+                                        <i class="fas fa-plus fa-3x"></i>
+                                    </span>
+                                </button>
+                                <button id="fa-minus">
+                                    <span class="image">
+                                        <i class="fas fa-minus fa-3x"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
