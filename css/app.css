@@ -6,7 +6,7 @@ O porquê dessa fonte.
 body {
     margin: 0;
     font-family: 'Muli', 'Helvetica' !important;
-    background-color: #089644;
+    background-color: #4BD7FA;
     color: white;
 }
 
@@ -31,7 +31,7 @@ input, label {
     list-style-type: none;
     padding-left: 0px;
     margin: 0;
-    background-color: #19E36D;
+    background-color: #ACFA69;
 }
 
 .menu > li {
