@@ -11,6 +11,9 @@
     <header>
         <div class="menu-wrapper">
             <nav>
+                <button id="collapse">
+                    <i class="fas fa-bars fa-2x"></i>
+                </button>
                 <ul class="container menu">
                     <li><a href="#calc-agua">Calculadora de Água</a></li>
                     <li><a href="#calc-energia">Calculadora Elétrica</a></li>
@@ -21,7 +24,7 @@
     </header>    
     <div class="container">
         <div class="container">
-            <h1>EcoMoney</h1>                 
+            <h1 id="title"></h1>                 
         </div>
         <div class="container">
            <section id="calc-agua">
@@ -52,11 +55,11 @@
                     </div>
                     <div id="question-container" class="container question margin-top-20">
                         <div class="question">
-                            <span id="question-text">Quantas descargas você realiza ao dia ?</span>
+                            <span id="question-text"></span>
                         </div>                        
                         <div class="container margin-top-50">
                             <div class="container centralize">
-                                <input type="number" id="counter" value="0"/>
+                                <input type="number" id="counter" value="0" min="0"/>
                             </div>
                             <div class="container answer">
                                 <button id="fa-plus">
@@ -70,7 +73,10 @@
                                     </span>
                                 </button>
                             </div>
-                        </div>
+                        </div>                        
+                    </div>
+                    <div class="container centralize">
+                        <button id="calcular-gastos-agua">Calcular Gastos!</button>
                     </div>
                 </section>
             </section>

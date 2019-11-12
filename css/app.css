@@ -23,6 +23,10 @@ input, label {
     flex-wrap: wrap;
 }
 
+nav {
+    background-color: #ACFA69;
+}
+
 .menu {
     position: relative;
     width: 100%;
@@ -108,23 +112,17 @@ section,
     cursor: pointer;
 }
 
-@media (max-width: 436px) 
-{
-    .images-container,
-    .menu {
-        flex-direction: column;
-        text-align: center;
-        justify-content: center;
-    }
+#collapse {
+    display: none;
+    padding: 10px 15px;
+}
 
-    span.image {
-        text-align: center;
-        justify-content: center;
-    }
-    
-    input[type="number"] {
-        text-indent: 0px;
-    }
+#collapse:hover {
+    background: none;
+}
+
+.fa-5x {
+    font-size: 3em !important;
 }
 
 .fa-spin-hover:hover {
@@ -148,13 +146,6 @@ section,
     justify-content: space-around;
 }
 
-input[type="button"]:hover, 
-input[type="button"]:focus, 
-button:hover,
-button:focus {
-    background: rgba(0, 0, 0, 0.2);
-}
-
 .active {
     background: rgba(0, 0, 0, 0.2);
 }
@@ -165,4 +156,93 @@ button:focus {
 
 .margin-top-20 {
     margin-top: 20px;
+}
+
+body {
+    transition: all 0.5s ease-in;
+}
+
+.show {
+    z-index: 2;    
+}
+
+#question-container {
+    display: flex;
+}
+
+#question-container.show,
+.menu.show {
+    max-height: 300px;
+    transition: max-height 0.5s;
+}
+
+#question-container {
+    transition: max-height 0.2s;
+    overflow: hidden;
+    max-height: 0;
+}
+
+#fa-user-plus>span,
+#fa-tshirt>span {
+    padding: 10px;
+}
+
+#fa-shower>span {
+    padding: 15px;    
+}
+
+#calcular-gastos-agua {
+    font-family: inherit;
+    color: inherit;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 100px;
+    padding: 20px;
+}
+
+#calcular-gastos-agua:hover {
+    transform: translateY(2px);
+}
+
+#calcular-gastos-agua:focus {
+    transform: translateY(4px);
+}
+
+
+@media (max-width: 690px) 
+{
+    .images-container {
+        flex-direction: row;
+        text-align: center;
+        justify-content: space-around;
+    }
+    .menu {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;    
+    }
+
+    span.image {
+        text-align: center;
+        justify-content: center;
+    }
+    
+    input[type="number"] {
+        text-indent: 10px;
+    }
+
+    #collapse {
+        display: flex;
+    }
+
+    .menu {
+        position: absolute;
+        display: flex;
+        transition: max-height 0.2s;
+        overflow: hidden;
+        max-height: 0;
+    }
+    
+    .fa-5x {
+        font-size: 3em !important;
+    }
 }
