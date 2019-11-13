@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>EcoMoney</title>
+    <title>ECOnomia</title>
     <link rel="stylesheet" href="./css/app.css" />
     <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
     <link href="./fontawesome/css/all.css" rel="stylesheet">
@@ -11,12 +11,12 @@
 
 <body>
     <header>
-        <div class="menu-wrapper">
+        <div class="menu-wrapper" style="background: #19E36D;">
             <nav>
                 <button id="collapse">
                     <i class="fas fa-bars fa-2x"></i>
                 </button>
-                <ul class="container menu">
+                <ul class="container menu" style="background: #19E36D;">
                     <li><a href="#calc-agua">Calculadora de Água</a></li>
                     <li><a href="#calc-energia">Calculadora de Energia</a></li>
                 </ul>
@@ -57,22 +57,16 @@
                         </div>
                     </section>
                 </section>
-
                 <section id="calc-energia">
                     <section>
                         <div class="container margin-top-20">
                             <div class="images-container">
-                                <button id="fa-user-plus2" class="energy-spent-icons">
-                                    <span class="image">
-                                        <i class="fas fa-user-plus fa-5x"></i>
-                                    </span>
-                                </button>
                                 <button id="fa-thermometer-empty" class="energy-spent-icons">
                                     <span class="image">
                                         <i class="fas fa-thermometer-empty fa-5x"></i>
                                     </span>
                                 </button>
-                                <button id="fa-shower" class="energy-spent-icons">
+                                <button id="fa-shower-energy" class="energy-spent-icons">
                                     <span class="image">
                                         <i class="fas fa-shower fa-5x"></i>
                                     </span>
@@ -127,12 +121,22 @@
                             <div class="container space-around margin-top-20">
                                 <div class="value-container centralize">
                                     <span class="expected-value">110L</span>
-                                    <p class="value-text">Valor Esperado</p>
+                                    <p class="value-text">Gasto de água esperado</p>
                                 </div>
                                 <div class="value-container centralize">
-                                    <span id="resulted-value"></span>
-                                    <p class="value-text">Valor Calculado</p>
+                                    <span id="resulted-water-value"></span>
+                                    <p class="value-text">Gasto de água calculado</p>
                                 </div>
+                            </div>
+                            <div class="container space-around margin-top-20">
+                                    <div class="value-container centralize">
+                                        <span class="expected-value">250 KWh</span>
+                                        <p class="value-text">Gasto de energia esperado</p>
+                                    </div>
+                                    <div class="value-container centralize">
+                                        <span id="resulted-energy-value"></span>
+                                        <p class="value-text">Gasto de energia calculado</p>
+                                    </div>
                             </div>
                             <div class="container space-around margin-top-20">
                                 <button class="show-tips" id="show-tips">Dicas para melhorar o consumo!</button>
@@ -144,9 +148,10 @@
                 <section id="tips">
                     <ul>
                         <div class="suggestion-card">
-                            Tome banhos mais curtos!
+                            <span id="suggestion-water-text"></span>
                         </div>
                         <div class="suggestion-card">
+                            <span id="suggestion-energy-text"></span>
                         </div>
                         <div class="suggestion-card">
                         </div>

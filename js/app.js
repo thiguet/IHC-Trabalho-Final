@@ -21,18 +21,16 @@ const state = {
     },
     "energy": {
         "answers": {
-            "fa-user-plus2": 0,
             "fa-thermometer-empty": 0,
-            "fa-shower" : 0,
+            "fa-shower-energy" : 0,
             "fa-dice-four": 0,
             "fa-tv": 0
         },
         "answersWeight": {
-            "fa-user-plus2": 0,
-            "fa-thermometer-empty": 0,
-            "fa-shower" : 0,
-            "fa-dice-four": 0,
-            "fa-tv": 0
+            "fa-thermometer-empty": 42,
+            "fa-shower-energy" : 2.2,
+            "fa-dice-four": 0.75,
+            "fa-tv": 305
         },
         "selectedBtnId": ""
     }
@@ -41,23 +39,33 @@ const state = {
 var backgroundColors = {
     "#calc-agua": "#4BD7FA",
     "#calc-energia": "#F0D838",
-    "#about": "#ACFA69"
 };
 var fontColors = {
     "#calc-agua": "white",
     "#calc-energia": "rgb(119, 67, 67)",
-    "#about": "white"
 };
 var headings = {
     "#calc-agua": "Calculadora de Água",
     "#calc-energia": "Calculadora de Energia",
-    "#about": "EcoMoney"
 };
 var messages = {
     "fa-user-plus": "Quantas pessoas vivem na mesma casa que você ?",
     "fa-toilet": "Quantas descargas você utiliza por dia ?",
     "fa-shower": "Quantos minutos você gasta no chuveiro ?",
-    "fa-tshirt": "Quantas vezes você lava a roupa na semana ?"
+    "fa-tshirt": "Quantas vezes você lava a roupa na semana ?",
+    "fa-thermometer-empty": "Quantas horas por dia o ar condicionado esta ligado?",
+    "fa-shower-energy": "Quantos minutos por dia o chuveiro elétrico esta ligado ?",
+    "fa-dice-four" : "Quantos minutos por dia o cooktop elétrico esta ligado?",
+    "fa-tv": "Quantos dispositivos se encontram no modo stand-by quando não usados? Ex: Televisão, microondas, geladeira"
+};
+var suggestion = {
+    "fa-toilet": "Diminua o numero de acionamento da descarga",
+    "fa-shower": "Diminua o tempo de banho",
+    "fa-tshirt": "Tente lavar uma maior quantidade de roupa por vez, para diminuir número de lavagens",
+    "fa-thermometer-empty": "Diminua o tempo de uso do ar condicionado",
+    "fa-shower-energy": "Diminua o tempo de banho",
+    "fa-dice-four" : "Diminua o tempo com o cooktop ligado",
+    "fa-tv": "Desligue os aparelhos da tomada, quando não utilizados"
 };
 var modes = {
     "#calc-agua": WATER_MODE,
@@ -154,15 +162,11 @@ $(document).ready(() => {
                 alert('Favor informar a quantidade de pessoas!');
             } 
         } else if(state.mode === ENERGY_MODE) {
-            if($('#fa-user-plus2').hasClass('active')) {
-                if($('#fa-thermometer-empty, #fa-shower, #fa-dice-four, #fa-tv').hasClass('active')) {
+                if($('#fa-thermometer-empty, #fa-shower-energy, #fa-dice-four, #fa-tv').hasClass('active')) {
                     showResults();
                 } else {
                     alert('Favor selecionar pelo menos um item a ser avaliado!');
                 } 
-            } else {
-                alert('Favor informar a quantidade de pessoas!');
-            }
         }
 
     });
@@ -182,16 +186,26 @@ $(document).ready(() => {
 });
 
 const showResults = () => {
-    $("body").css("background", "#ACFA69");
+    $("body").css("background", "#19E36D");
     $("body").css("color", "white");
     $(".container > section, #calcular-gastos, #title").hide();
     $("#question-container").removeClass("show");
     $("#results").fadeIn();
     
-    const spent = calculateSpent();
-    $("#resulted-value").html(spent + 'L');
+    const waterSpent = calculateWaterSpent();
+    $("#resulted-water-value").html(waterSpent + ' L');
     
-    if(spent <= 110) {
+    if(waterSpent <= 110) {
+        $("#resultedMessage").html(resultMessages['success']);
+    } else {
+        $("#resultedMessage").html(resultMessages['error']); 
+        $("#show-tips").show();      
+    }
+
+    const energySpent = calculateEnergySpent();
+    $("#resulted-energy-value").html(energySpent + ' kWh');
+
+    if(energySpent <= 250) {
         $("#resultedMessage").html(resultMessages['success']);
     } else {
         $("#resultedMessage").html(resultMessages['error']); 
@@ -226,15 +240,35 @@ const setSelectedBtn = (selectedBtnId) => {
     state[state.mode].selectedBtnId = selectedBtnId; 
 }
 
-const calculateSpent = () => {
+const calculateWaterSpent = () => {
     const answers       = state[WATER_MODE].answers;
     const answersWeight = state[WATER_MODE].answersWeight;
+    let maior = 0;
     let amount = 0;
 
     Object.keys(answers).forEach(key => {
         amount += answers[key] * answersWeight[key];
+        if(maior <= answers[key] * answersWeight[key]){
+            $("#suggestion-water-text").html(suggestion[key]);
+        }
     });
 
     amount *= answers['fa-user-plus'];
+    return amount;
+};
+
+const calculateEnergySpent = () => {
+    const answers       = state[ENERGY_MODE].answers;
+    const answersWeight = state[ENERGY_MODE].answersWeight;
+    let maior = 0;
+    let amount = 0; 
+
+    Object.keys(answers).forEach(key => {
+        amount += answers[key] * answersWeight[key];
+        if(maior <= answers[key] * answersWeight[key]){
+            $("#suggestion-energy-text").html(suggestion[key]);
+        }
+    });
+
     return amount;
 };
