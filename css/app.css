@@ -142,6 +142,7 @@ section,
     font-size: 18px;
 }
 
+.space-around,
 .answer {
     justify-content: space-around;
 }
@@ -207,6 +208,17 @@ body {
     transform: translateY(4px);
 }
 
+.value-container {
+    font-size: 16px;
+}
+
+.show-tips {
+    display: none;
+    background: rgba(0,0,0,0.2);
+    font-family: inherit;
+    font-size: 16px;
+    padding: 20px;
+}
 
 @media (max-width: 690px) 
 {

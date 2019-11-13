@@ -21,7 +21,7 @@
             </nav>
         </div>
     </header>    
-    <article>
+    <article class="margin-top-50">
         <div class="container">
             <div class="container centralize">
                 <h1 id="title"></h1>                 
@@ -47,7 +47,7 @@
                                     </span>
                                 </button>
                                 <button id="fa-tshirt" class="water-spent-icons">
-                                <span class="image">
+                                    <span class="image">
                                         <i class="fas fa-tshirt fa-5x"></i>
                                     </span>
                                 </button>
@@ -99,14 +99,39 @@
                 </section>
 
                 <section id="results">
-                    <div class="container">
-                        <div class="container centralize">
-                            <span id="result-message"></span>
-                        </div>
-                        <div class="">
-
+                    <div class="margin-top-50">
+                        <div class="container space-around">
+                            <div class="centralize">
+                                <h3 id="resultedMessage"></h3>
+                            </div>
+                            <div class="container space-around margin-top-20">
+                                <div class="value-container centralize">
+                                    <span class="expected-value">110L</span>
+                                    <p class="value-text">Valor Esperado</p>
+                                </div>
+                                <div class="value-container centralize">
+                                    <span id="resulted-value"></span>
+                                    <p class="value-text">Valor Calculado</p>
+                                </div>
+                            </div>
+                            <div class="container space-around margin-top-20">
+                                <button class="show-tips" id="show-tips">Dicas para melhorar o consumo!</button>
+                            </div>
                         </div>
                     </div>
+                </section>
+
+                <section id="tips">
+                    <ul>
+                        <div class="suggestion-card">
+                            Tome banhos mais curtos!
+                        </div>
+                        <div class="suggestion-card">
+                        </div>
+                        <div class="suggestion-card">
+                        </div>
+                    </ul>
+
                 </section>
             </div>        
         </div>
