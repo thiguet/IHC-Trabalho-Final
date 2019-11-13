@@ -21,10 +21,18 @@ const state = {
     },
     "energy": {
         "answers": {
-            "fa-user-plus": 0,
-            "fa-toilet": 0,
-            "fa-shower": 0,
-            "fa-tshirt": 0
+            "fa-user-plus2": 0,
+            "fa-thermometer-empty": 0,
+            "fa-shower" : 0,
+            "fa-dice-four": 0,
+            "fa-tv": 0
+        },
+        "answersWeight": {
+            "fa-user-plus2": 0,
+            "fa-thermometer-empty": 0,
+            "fa-shower" : 0,
+            "fa-dice-four": 0,
+            "fa-tv": 0
         },
         "selectedBtnId": ""
     }
@@ -70,7 +78,7 @@ $(document).ready(() => {
     $(".menu > li").on("click", (evt) => {
         var hash = $(evt.currentTarget).children()[0].hash;
         
-        $("#title").fadeIn();
+        $("#title, #calcular-gastos, #title").fadeIn();
         $("#title").html(headings[hash]);
         $(".container > section").hide();
         $(hash).fadeIn();
@@ -82,11 +90,10 @@ $(document).ready(() => {
         setMode(hash);
     });
 
-    $(".water-spent-icons").on("click", (evt) => {
+    $(".water-spent-icons, .energy-spent-icons").on("click", (evt) => {
         // CSS Stuff
         const btnId = evt.currentTarget.id;
 
-        //$(evt.currentTarget).hasClass("active") &&
         if($("#question-container").hasClass('show') && btnId === state[state.mode].selectedBtnId) {
             $("#question-text").html('');
 
@@ -134,27 +141,28 @@ $(document).ready(() => {
 
     $("article").on("click", closeMenu);
 
-    $("#calcular-gastos-agua").on("click", () => {
-        if($('#fa-user-plus').hasClass('active')) {
-            if($('#fa-toilet, #fa-shower, #fa-tshirt').hasClass('active')) {
-                $("body").css("background", "#ACFA69");
-                $(".container > section").hide();
-                $("#results").fadeIn();
-                
-                const spent = calculateWaterSpent();
-                $("#resulted-value").html(spent + 'L');
-                
-                if(spent <= 110) {
-                    $("#resultedMessage").html(resultMessages['success']);
+    $("#calcular-gastos").on("click", () => {
+        
+        if(state.mode === WATER_MODE) {
+            if($('#fa-user-plus').hasClass('active')) {
+                if($('#fa-toilet, #fa-shower, #fa-tshirt').hasClass('active')) {
+                    showResults();
                 } else {
-                    $("#resultedMessage").html(resultMessages['error']); 
-                    $("#show-tips").show();      
+                    alert('Favor selecionar pelo menos um item a ser avaliado!');
                 }
+            }  else {
+                alert('Favor informar a quantidade de pessoas!');
+            } 
+        } else if(state.mode === ENERGY_MODE) {
+            if($('#fa-user-plus2').hasClass('active')) {
+                if($('#fa-thermometer-empty, #fa-shower, #fa-dice-four, #fa-tv').hasClass('active')) {
+                    showResults();
+                } else {
+                    alert('Favor selecionar pelo menos um item a ser avaliado!');
+                } 
             } else {
-                alert('Favor selecionar pelo menos um item a ser avaliado!');
+                alert('Favor informar a quantidade de pessoas!');
             }
-        } else {
-            alert('Favor informar a quantidade de pessoas!');
         }
 
     });
@@ -172,6 +180,24 @@ $(document).ready(() => {
         updateAnswer(value);
     });  
 });
+
+const showResults = () => {
+    $("body").css("background", "#ACFA69");
+    $("body").css("color", "white");
+    $(".container > section, #calcular-gastos, #title").hide();
+    $("#question-container").removeClass("show");
+    $("#results").fadeIn();
+    
+    const spent = calculateSpent();
+    $("#resulted-value").html(spent + 'L');
+    
+    if(spent <= 110) {
+        $("#resultedMessage").html(resultMessages['success']);
+    } else {
+        $("#resultedMessage").html(resultMessages['error']); 
+        $("#show-tips").show();      
+    }
+};
 
 const closeMenu = () => {
     if($(".menu").hasClass("show")) {
@@ -200,7 +226,7 @@ const setSelectedBtn = (selectedBtnId) => {
     state[state.mode].selectedBtnId = selectedBtnId; 
 }
 
-const calculateWaterSpent = () => {
+const calculateSpent = () => {
     const answers       = state[WATER_MODE].answers;
     const answersWeight = state[WATER_MODE].answersWeight;
     let amount = 0;

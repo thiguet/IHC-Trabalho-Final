@@ -167,10 +167,6 @@ body {
     z-index: 2;    
 }
 
-#question-container {
-    display: flex;
-}
-
 #question-container.show,
 .menu.show {
     max-height: 300px;
@@ -178,6 +174,7 @@ body {
 }
 
 #question-container {
+    display: flex;
     transition: max-height 0.2s;
     overflow: hidden;
     max-height: 0;
@@ -192,7 +189,7 @@ body {
     padding: 15px;    
 }
 
-#calcular-gastos-agua {
+#calcular-gastos {
     font-family: inherit;
     color: inherit;
     background: rgba(0, 0, 0, 0.2);
@@ -200,11 +197,11 @@ body {
     padding: 20px;
 }
 
-#calcular-gastos-agua:hover {
+#calcular-gastos:hover {
     transform: translateY(2px);
 }
 
-#calcular-gastos-agua:focus {
+#calcular-gastos:focus {
     transform: translateY(4px);
 }
 
@@ -257,4 +254,13 @@ body {
     .fa-5x {
         font-size: 3em !important;
     }
+}
+
+
+
+#question-container {
+    display: flex;
+    transition: max-height 0.2s;
+    overflow: hidden;
+    max-height: 0;
 }
