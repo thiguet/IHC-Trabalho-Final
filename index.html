@@ -58,15 +58,13 @@
                                 <span id="question-text"></span>
                             </div>                        
                             <div class="container margin-top-50">
-                                <div class="container centralize">
-                                    <input type="number" id="counter" value="0" min="0"/>
-                                </div>
                                 <div class="container answer">
                                     <button id="fa-plus">
                                         <span class="image">
                                             <i class="fas fa-plus fa-3x"></i>
                                         </span>
                                     </button>
+                                    <output type="number" id="counter" value="0" min="0" style="font-size:50px"></output>
                                     <button id="fa-minus">
                                         <span class="image">
                                             <i class="fas fa-minus fa-3x"></i>
@@ -82,20 +80,60 @@
                 </section>
 
                 <section id="calc-energia">
-                    <section>
-                        <div class="container">
-                            <div class="form-control">
-                                <label>
-                                    <span>Teste</span>
-                                    <input type="text" />
-                                </label>
-                            </div>
-                            <div class="form-control">
-                                <span>Teste</span>
-                                <button></button>
-                            </div>
-                        </div>
-                    </section>        
+                        <section>
+                                <div class="container margin-top-20">
+                                    <div class="images-container">
+                                        <button id="fa-user-plus" class="energy-spent-icons">
+                                            <span class="image">
+                                                <i class="fas fa-user-plus fa-5x"></i>
+                                            </span>
+                                        </button>
+                                        <button id="fa-thermometer-empty" class="energy-spent-icons">
+                                            <span class="image">
+                                                <i class="fas fa-thermometer-empty fa-5x"></i>
+                                            </span>
+                                        </button>
+                                        <button id="fa-shower" class="energy-spent-icons">
+                                            <span class="image">
+                                                <i class="fas fa-shower fa-5x"></i>
+                                            </span>
+                                        </button>
+                                        <button id="fa-dice-four" class="energy-spent-icons">
+                                        <span class="image">
+                                                <i class="fas fa-dice-four fa-5x"></i>
+                                            </span>
+                                        </button>
+                                        <button id="fa-tv" class="energy-spent-icons">
+                                                <span class="image">
+                                                        <i class="fas fa-tv fa-5x"></i>
+                                                    </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="question-container" class="container question margin-top-20">
+                                    <div class="question">
+                                        <span id="question-text"></span>
+                                    </div>                        
+                                    <div class="container margin-top-50">
+                                        <div class="container answer">
+                                            <button id="fa-plus">
+                                                <span class="image">
+                                                    <i class="fas fa-plus fa-3x"></i>
+                                                </span>
+                                            </button>
+                                            <output type="number" id="counter" value="0" min="0" style="font-size:50px"></output>
+                                            <button id="fa-minus">
+                                                <span class="image">
+                                                    <i class="fas fa-minus fa-3x"></i>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>                        
+                                </div>
+                                <div class="container centralize">
+                                    <button id="calcular-gastos-agua">Calcular Gastos!</button>
+                                </div>
+                            </section>
                 </section>
 
                 <section id="results">
