@@ -34,6 +34,7 @@ $(document).ready(() => {
         $(hash).fadeIn();
         $('body').css('background-color', backgroundColors[hash]);
         $('body').css('color', fontColors[hash]);
+        closeMenu();
     });
 
     $(".water-spent-icons").on("click", (evt) => {
@@ -46,11 +47,6 @@ $(document).ready(() => {
             $("#question-text").html(messages[evt.currentTarget.id]);
             $("#question-container").addClass('show');
             $(evt.currentTarget).addClass("active");
-        }
-        
-        // JS Actions
-        if($("#question-container").hasClass("show") && !$(".water-spent-icons").hasClass('active')) {
-        } else {
         }
 
         $("#counter").val(0);
@@ -71,4 +67,30 @@ $(document).ready(() => {
         else 
             $(".menu").addClass('show');
     });
+
+    $("article").on("click", closeMenu);
+
+    $("#calcular-gastos-agua").on("click", () => {
+        $("body").css("background", "#ACFA69");
+        $(".container > section").hide();
+        $("#results").fadeIn();
+    });
 });
+
+const closeMenu = () => {
+    if($(".menu").hasClass("show")) {
+        $(".menu").removeClass('show');    
+    }
+};
+
+const state = {
+    "water-spent": {
+        "answers": {
+            "people": 0,
+            "toilet": 0,
+            "shower": 0,
+            "tshirt": 0  
+        },
+        "selectedBtn": ""
+    }
+};

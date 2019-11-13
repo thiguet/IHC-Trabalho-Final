@@ -16,104 +16,102 @@
                 </button>
                 <ul class="container menu">
                     <li><a href="#calc-agua">Calculadora de Água</a></li>
-                    <li><a href="#calc-energia">Calculadora Elétrica</a></li>
-                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#calc-energia">Calculadora de Energia</a></li>
                 </ul>
             </nav>
         </div>
     </header>    
-    <div class="container">
+    <article>
         <div class="container">
-            <h1 id="title"></h1>                 
-        </div>
-        <div class="container">
-           <section id="calc-agua">
-                <section>
-                    <div class="container margin-top-20">
-                        <div class="images-container">
-                            <button id="fa-user-plus" class="water-spent-icons">
+            <div class="container centralize">
+                <h1 id="title"></h1>                 
+            </div>
+            <div class="container">
+            <section id="calc-agua">
+                    <section>
+                        <div class="container margin-top-20">
+                            <div class="images-container">
+                                <button id="fa-user-plus" class="water-spent-icons">
+                                    <span class="image">
+                                        <i class="fas fa-user-plus fa-5x"></i>
+                                    </span>
+                                </button>
+                                <button id="fa-toilet" class="water-spent-icons">
+                                    <span class="image">
+                                        <i class="fas fa-toilet fa-5x"></i>
+                                    </span>
+                                </button>
+                                <button id="fa-shower" class="water-spent-icons">
+                                    <span class="image">
+                                        <i class="fas fa-shower fa-5x"></i>
+                                    </span>
+                                </button>
+                                <button id="fa-tshirt" class="water-spent-icons">
                                 <span class="image">
-                                    <i class="fas fa-user-plus fa-5x"></i>
-                                </span>
-                            </button>
-                            <button id="fa-toilet" class="water-spent-icons">
-                                <span class="image">
-                                    <i class="fas fa-toilet fa-5x"></i>
-                                </span>
-                            </button>
-                            <button id="fa-shower" class="water-spent-icons">
-                                <span class="image">
-                                    <i class="fas fa-shower fa-5x"></i>
-                                </span>
-                            </button>
-                            <button id="fa-tshirt" class="water-spent-icons">
-                               <span class="image">
-                                    <i class="fas fa-tshirt fa-5x"></i>
-                                </span>
-                            </button>
+                                        <i class="fas fa-tshirt fa-5x"></i>
+                                    </span>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                    <div id="question-container" class="container question margin-top-20">
-                        <div class="question">
-                            <span id="question-text"></span>
-                        </div>                        
-                        <div class="container margin-top-50">
-                            <div class="container centralize">
-                                <input type="number" id="counter" value="0" min="0"/>
+                        <div id="question-container" class="container question margin-top-20">
+                            <div class="question">
+                                <span id="question-text"></span>
+                            </div>                        
+                            <div class="container margin-top-50">
+                                <div class="container centralize">
+                                    <input type="number" id="counter" value="0" min="0"/>
+                                </div>
+                                <div class="container answer">
+                                    <button id="fa-plus">
+                                        <span class="image">
+                                            <i class="fas fa-plus fa-3x"></i>
+                                        </span>
+                                    </button>
+                                    <button id="fa-minus">
+                                        <span class="image">
+                                            <i class="fas fa-minus fa-3x"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="container centralize">
+                            <button id="calcular-gastos-agua">Calcular Gastos!</button>
+                        </div>
+                    </section>
+                </section>
+
+                <section id="calc-energia">
+                    <section>
+                        <div class="container">
+                            <div class="form-control">
+                                <label>
+                                    <span>Teste</span>
+                                    <input type="text" />
+                                </label>
                             </div>
-                            <div class="container answer">
-                                <button id="fa-plus">
-                                    <span class="image">
-                                        <i class="fas fa-plus fa-3x"></i>
-                                    </span>
-                                </button>
-                                <button id="fa-minus">
-                                    <span class="image">
-                                        <i class="fas fa-minus fa-3x"></i>
-                                    </span>
-                                </button>
+                            <div class="form-control">
+                                <span>Teste</span>
+                                <button></button>
                             </div>
-                        </div>                        
-                    </div>
-                    <div class="container centralize">
-                        <button id="calcular-gastos-agua">Calcular Gastos!</button>
+                        </div>
+                    </section>        
+                </section>
+
+                <section id="results">
+                    <div class="container">
+                        <div class="container centralize">
+                            <span id="result-message"></span>
+                        </div>
+                        <div class="">
+
+                        </div>
                     </div>
                 </section>
-            </section>
-
-            <section id="calc-energia">
-                <section>
-                    <div class="container">
-                        <div class="form-control">
-                            <label>
-                                <span>Teste</span>
-                                <input name="add" type="button" />
-                                <span>
-                                    <img class="image" src="images/add.svg" />
-                                </span>
-                                <span>
-                                    <img class="image" src="images/minus.svg" />
-                                </span>
-                            </label> 
-                        </div>
-                        <div class="form-control">
-                            <label>
-                                <span>Teste</span>
-                                <input type="text" />
-                            </label>
-                        </div>
-                        <div class="form-control">
-                            <span>Teste</span>
-                            <button></button>
-                        </div>
-                    </div>
-                </section>        
-            </section>
-
-            <section id="about">
-            </section>
-        </div>        
-    </div>
+            </div>        
+        </div>
+    </article>
+        
     <script defer src="js/jquery.min.js"></script>
     <script defer type="text/javascript" src="js/app.js"></script>
 </body>
