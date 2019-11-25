@@ -217,8 +217,33 @@ body {
     padding: 20px;
 }
 
+
+.header > h2  {
+    text-decoration: none;
+    color: white;
+}
+
+.header > h2 {
+    position: relative;
+    top: 0px;
+    left: 0%;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 20px;
+    padding: 0 !important;
+}
+
 @media (max-width: 690px) 
 {
+    .header {
+        text-decoration: none;
+        color:inherit;
+        position: relative;
+        top: 30px;
+        left: 0%;
+        padding: 0px;
+    }
+
     .images-container {
         flex-direction: row;
         text-align: center;
@@ -254,6 +279,7 @@ body {
     .fa-5x {
         font-size: 3em !important;
     }
+
 }
 
 

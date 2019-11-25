@@ -13,6 +13,9 @@
     <header>
         <div class="menu-wrapper" style="background: #19E36D;">
             <nav>
+                <div class="navbar-header centralize header">
+                    <h2>ECOnomia</h2>
+                </div>
                 <button id="collapse">
                     <i class="fas fa-bars fa-2x"></i>
                 </button>
@@ -26,11 +29,15 @@
     <article class="margin-top-50">
         <div class="container">
             <div class="container centralize">
-                <h1 id="title"></h1>
+                <h2 id="title"></h2>
             </div>
             <div class="container">
                 <section id="calc-agua">
                     <section>
+                        <div class="container centralize">
+                            <h3>Escolha quantas pessoas moram em sua residência e defina o gasto dos equipamentos
+                                selecionados abaixo:</h3>
+                        </div>
                         <div class="container margin-top-20">
                             <div class="images-container">
                                 <button id="fa-user-plus" class="water-spent-icons">
@@ -59,6 +66,9 @@
                 </section>
                 <section id="calc-energia">
                     <section>
+                        <div class="container centralize">
+                            <h3>Defina o gasto dos equipamentos selecionados abaixo:</h3>
+                        </div>
                         <div class="container margin-top-20">
                             <div class="images-container">
                                 <button id="fa-thermometer-empty" class="energy-spent-icons">
@@ -120,7 +130,7 @@
                             </div>
                             <div class="container space-around margin-top-20">
                                 <div class="value-container centralize">
-                                    <span class="expected-value">110L</span>
+                                    <span class="expected-value" id="expected-water-value">110L</span>
                                     <p class="value-text">Gasto de água esperado</p>
                                 </div>
                                 <div class="value-container centralize">
@@ -129,18 +139,16 @@
                                 </div>
                             </div>
                             <div class="container space-around margin-top-20">
-                                    <div class="value-container centralize">
-                                        <span class="expected-value">250 KWh</span>
-                                        <p class="value-text">Gasto de energia esperado</p>
-                                    </div>
-                                    <div class="value-container centralize">
-                                        <span id="resulted-energy-value"></span>
-                                        <p class="value-text">Gasto de energia calculado</p>
-                                    </div>
+                                <div class="value-container centralize" id="expected-energy-value">
+                                    <span class="expected-value">250 KWh</span>
+                                    <p class="value-text">Gasto de energia esperado</p>
+                                </div>
+                                <div class="value-container centralize">
+                                    <span id="resulted-energy-value"></span>
+                                    <p class="value-text">Gasto de energia calculado</p>
+                                </div>
                             </div>
-                            <div class="container space-around margin-top-20">
-                                <button class="show-tips" id="show-tips">Dicas para melhorar o consumo!</button>
-                            </div>
+                            <button class="show-tips" id="show-tips">Dicas para melhorar o consumo!</button>
                         </div>
                     </div>
                 </section>

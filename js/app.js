@@ -55,7 +55,7 @@ var messages = {
     "fa-tshirt": "Quantas vezes você lava a roupa na semana ?",
     "fa-thermometer-empty": "Quantas horas por dia o ar condicionado esta ligado?",
     "fa-shower-energy": "Quantos minutos por dia o chuveiro elétrico esta ligado ?",
-    "fa-dice-four" : "Quantos minutos por dia o cooktop elétrico esta ligado?",
+    "fa-dice-four" : "Quantos minutos por dia o fogão elétrico esta ligado?",
     "fa-tv": "Quantos dispositivos se encontram no modo stand-by quando não usados? Ex: Televisão, microondas, geladeira"
 };
 var suggestion = {
@@ -191,21 +191,17 @@ const showResults = () => {
     $(".container > section, #calcular-gastos, #title").hide();
     $("#question-container").removeClass("show");
     $("#results").fadeIn();
-    
+
+    const people = (state.water.answers["fa-user-plus"] * 110);
+
     const waterSpent = calculateWaterSpent();
     $("#resulted-water-value").html(waterSpent + ' L');
-    
-    if(waterSpent <= 110) {
-        $("#resultedMessage").html(resultMessages['success']);
-    } else {
-        $("#resultedMessage").html(resultMessages['error']); 
-        $("#show-tips").show();      
-    }
 
     const energySpent = calculateEnergySpent();
     $("#resulted-energy-value").html(energySpent + ' kWh');
+    $("#expected-water-value").html(people  + ' L');
 
-    if(energySpent <= 250) {
+    if(waterSpent <= people && energySpent <= (250)) {
         $("#resultedMessage").html(resultMessages['success']);
     } else {
         $("#resultedMessage").html(resultMessages['error']); 
@@ -248,7 +244,8 @@ const calculateWaterSpent = () => {
 
     Object.keys(answers).forEach(key => {
         amount += answers[key] * answersWeight[key];
-        if(maior <= answers[key] * answersWeight[key]){
+        if(maior <= answers[key] * answersWeight[key] && (answers[key] * answersWeight[key] ) > 0){
+            maior = answers[key] * answersWeight[key];
             $("#suggestion-water-text").html(suggestion[key]);
         }
     });
@@ -265,7 +262,8 @@ const calculateEnergySpent = () => {
 
     Object.keys(answers).forEach(key => {
         amount += answers[key] * answersWeight[key];
-        if(maior <= answers[key] * answersWeight[key]){
+        if(maior <= answers[key] * answersWeight[key] && (answers[key] * answersWeight[key] ) > 0  ){
+            maior = answers[key] * answersWeight[key];
             $("#suggestion-energy-text").html(suggestion[key]);
         }
     });
